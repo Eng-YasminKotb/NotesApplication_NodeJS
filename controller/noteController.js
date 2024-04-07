@@ -1,7 +1,7 @@
 //Controller is used for business logic
 //To export the following function
 var generator=require('../Util/generator')
-var memsrorage=require('../Util/memory.storage')
+var memstorage=require('../Util/memory.storage')
 var model=require('../model/note.model')
 
 exports.getAllNotes= function(req,res) {
@@ -15,8 +15,8 @@ exports.getAllNotes= function(req,res) {
     console.log("values........."+JSON.stringify(values))
     
     var Note=model.Note;
-    var noteObj=new Note(sqlId_1,"Best than yester day","keep going under any presure","Yasmin",new Date());
-    res.send("get all notes By yasmina-----keys---- "+ JSON.stringify(noteObj)); */
+    var noteObj=new Note(sqlId_1,"Best than yester day","keep going under any presure","Yasmin",new Date()); */
+    res.send("get all notes By yasmina");
 
 
 }
@@ -30,15 +30,15 @@ exports.saveNotes= function(req,res) {
     //req.body
     var title=req.body.title;
     var content=req.body.content;
-    if(!title|| !content){
-        return res.status(500).send({error: 'Title and content shoud not be empty'})
-
+    
+    if(!title  || !content){
+        return res.status(500).send({error: 'Title  Content shoud not be empty'})
+    }
         var Note=model.Note;
         var noteObj=new Note(sqlId_1,title,content,Create_By,Create_At);
-        memorystorageUmd.store.setItem(seqId, noteObj);
+        memstorage.store.setItem(sqlId_1, noteObj);
         return res.status(201).send("Note is saved Successfully!");
-
-}
+    
 
 }
 
