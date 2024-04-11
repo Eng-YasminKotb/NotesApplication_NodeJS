@@ -25,7 +25,7 @@ app.get("/",function(req, res){
 
 app.use("/api/v1",noteRoute)
 
-app.listen(9000, ()=>{
+app.listen(3000, ()=>{
     console.log(`Server Start :)`)
 })
 //netstat -ano | findstr :9323
