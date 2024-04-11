@@ -3,7 +3,7 @@
 var generator=require('../Util/generator')
 var memstorage=require('../Util/memory.storage')
 var model=require('../model/note.model')
-
+//Try
 exports.getAllNotes= function(req,res) {
    // var sqlId_1=generator.generate();
     //memstorage.store.setItem(sqlId_1, "1st_key")
@@ -85,6 +85,7 @@ exports.deleteNotes= function(req,res) {
 
 
    return res.status(200).send({error: 'note is deleted successfully'});*/
+
 }
 
 
@@ -93,3 +94,6 @@ exports.deleteNotes= function(req,res) {
 ///post -->update
 
 ///put -->save || add new note
+
+
+
